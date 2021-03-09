@@ -1,0 +1,28 @@
+.search-bar {
+	position: relative;
+	display: flex;
+}
+
+.search-btn {
+	position: absolute;
+	top: 8px;
+	right: 8px
+	width: 10 px
+	background-color: lightblue
+
+
+.search {
+	border: 1px solid black;
+	float: right
+	height: 20px
+	width: 80%
+	padding: 2px 23px 2px 30px
+	outline: 0;
+	background-color: whitesmoke;
+}
+
+.search:focus {
+	border: 1.5px solid blue
+	background-color: white;
+}
+	

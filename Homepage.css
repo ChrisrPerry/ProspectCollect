@@ -1,0 +1,67 @@
+#container
+{
+width: 100%;
+margin: 10px auto;
+background-color: #9AE9F3;
+color: #333;
+border: 1px solid black;
+line-height: 130%;
+}
+#top{
+	padding: 0em 0em;
+	background-color: #4285f4;
+	border: 1px solid black;
+}
+#top h1{
+	text-align: center;
+	padding = 0;
+	font-size: 46px;
+	color: white;
+}
+#navbar {
+	overflow: hidden;
+	background-color: #4285f4;
+}
+
+#dropdown{
+	float:left;
+	overflow:hidden;
+}
+
+#dropdown #dropButton{
+	font-size:16pt;
+	margin:0;
+	font-family: inherit;
+	background-color:#4285f4;
+	outline:none;
+	border:1px solid black;
+}
+#navbar img{
+
+	width: 160px;
+	display: block;
+	display:inline-block;
+}
+#dropdown_content{
+	display: none;
+	min-width:172px;
+	color: white;
+	background-color: #4285f4;
+	position:absolute;
+	border: 1px solid black;
+}
+
+#dropdown_content a{
+	float:none;
+	color:white;
+	padding:12px 0px;
+	display:block;
+	text-align: center;
+	border:1px solid black;
+}
+
+#dropdown:hover #dropdown_content{
+	display: block;
+}
+
+
