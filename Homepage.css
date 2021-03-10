@@ -1,29 +1,106 @@
-#container
-{
-width: 100%;
-margin: 10px auto;
-background-color: #9AE9F3;
-color: #333;
-border: 1px solid black;
-line-height: 130%;
-}
-#top{
+#container{
+	width: 100%;
+	margin: 10px auto;
+	background-color: #E6E8E8;
+	color: #333;
+	border: 1px solid black;
+	line-height: 130%;
+	overflow: auto;
+	}
+
+#header{
 	padding: 0em 0em;
 	background-color: #4285f4;
 	border: 1px solid black;
 }
-#top h1{
+
+#header h1{
 	text-align: center;
-	padding = 0;
-	font-size: 46px;
+	padding: 0;
+	font-size: 52px;
 	color: white;
 }
+
+#header img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 10%;
+	padding: 5px;
+}
+
 #navbar {
 	overflow: hidden;
 	background-color: #4285f4;
+	overflow: hidden;
+	float: left;
+	border: 1px solid black;
+	width: 150px;
+	float: left;
 }
 
-#dropdown{
+#navbar ul{
+	list-style-type: none;
+	padding: 0;
+	width: 150px;
+}
+
+li a{
+	text-decoration: none;
+	display: block;
+	font-size: 24px;
+	text-align: center;
+	padding: 1em 0;
+	color: #FFFFFF;
+}
+
+li a:hover{
+	background-color: #9AE9F3;
+	padding: 1em 0;
+	color: #000000;
+}
+
+#content{
+	margin-left: 200px;
+	margin-right: 200px;
+	padding: 1em;
+}
+
+#homeContent{
+	text-align: center;
+	max-width: 36em;
+}
+
+#getStartedButton{
+	float: right;
+	margin-left: 0px auto;
+	padding: 1em;
+	text-align: center;
+	border: 1px solid black;
+	display: inline-block;
+	overflow: auto;
+}
+
+div.form{
+    display: block;
+    text-align: center;
+}
+form{
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    
+}
+#content 
+
+/* #header img{
+	width: 160px;
+	display: block;
+	display:inline-block;
+} */
+
+
+/* #dropdown{
 	float:left;
 	overflow:hidden;
 }
@@ -35,14 +112,9 @@ line-height: 130%;
 	background-color:#4285f4;
 	outline:none;
 	border:1px solid black;
-}
-#navbar img{
+} */
 
-	width: 160px;
-	display: block;
-	display:inline-block;
-}
-#dropdown_content{
+/* #dropdown_content{
 	display: none;
 	min-width:172px;
 	color: white;
@@ -62,6 +134,6 @@ line-height: 130%;
 
 #dropdown:hover #dropdown_content{
 	display: block;
-}
+} */
 
 
