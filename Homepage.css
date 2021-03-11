@@ -1,3 +1,4 @@
+/* header and nav bar styling */
 #container{
 	width: 100%;
 	margin: 10px auto;
@@ -66,32 +67,76 @@ li a:hover{
 	padding: 1em;
 }
 
-#homeContent{
+.homeContent{
 	text-align: center;
 	max-width: 36em;
 }
 
 #getStartedButton{
-	float: right;
-	margin-left: 0px auto;
-	padding: 1em;
-	text-align: center;
 	border: 1px solid black;
-	display: inline-block;
-	overflow: auto;
+	background-color: #4285f4;
+	color: #FFFFFF;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	margin-left: 75px;
+	margin-right: 75px;
 }
 
+#getStartedButton a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#getStartedButton a:hover{
+	text-decoration: none;
+	color: #000000;
+}
+
+.homeContent img{
+	max-width: 60%;
+}
+
+#footer{
+	padding: 0em 0em;
+	background-color: #4285f4;
+	border: 1px solid black;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+/* login page styling */
 div.form{
     display: block;
     text-align: center;
 }
+
 form{
     display: inline-block;
     text-align: center;
     margin-left: auto;
-    
+
 }
-#content 
+
+/* contact us member bio styling */
+.members{
+	margin: 0px auto;
+	width: 40%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+	text-align: center;
+}
+
+.cont{
+	padding: 0 16px;
+}
+
+.member{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background-color: #FFFFFF;
+}
+
+/* profile page styling */
 
 /* #header img{
 	width: 160px;
@@ -135,5 +180,3 @@ form{
 #dropdown:hover #dropdown_content{
 	display: block;
 } */
-
-
