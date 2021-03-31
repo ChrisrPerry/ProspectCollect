@@ -64,9 +64,9 @@ li a:hover{
 	color: #000000;
 }
 #search-bar{
+	height:33.34px;
 	width:100%;
 	margin-left:150px;
-	margin-right:0px;
 
 }
 #search-input{
@@ -85,15 +85,16 @@ li a:hover{
 }
 #content{
 	margin-left: 150px;
+	height:185px;
 }
 
 .homeContent{
 	text-align: center;
+
 }
 
 .homeContent p{
-	position: relative;
-	top:20px;
+
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -104,6 +105,7 @@ li a:hover{
 	float:left;
 }
 #box h3{
+	text-align: center;
 	font-size: 34px;
 	padding: 40px 0em;
 	margin: 0px auto;
@@ -143,12 +145,18 @@ li a:hover{
 
 .homeImg{
 	display: block;
-	position: relative;
-	top: 20px;
-	display: block;
-	height: 355px;
-	bottom: 20px
+	height: 400px;
 
+}
+#images{
+	height:500px;
+	width:100%;
+
+}
+
+#images h3{
+	text-align: center;
+	background-color: 
 }
 
 #footer{
