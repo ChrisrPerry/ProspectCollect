@@ -18,13 +18,14 @@
 }
 
 #header h1{
-	text-align:center;
 	padding: 12px 0px;
 	font-size: 62px;
 	color: white;
 }
 
-
+h1{
+	text-align: center;
+}
 #header img{
 	display: block;
 	float:left;
@@ -65,14 +66,13 @@ li a:hover{
 }
 #search-bar{
 	height:33.34px;
-	width:100%;
 	margin-left:150px;
 
 }
 #search-input{
 	float:left;
 	padding: 0.5em 0em;
-	width:85%;
+	width:89.7%;
 }
 	
 #search-button{
@@ -81,7 +81,7 @@ li a:hover{
 	background-color: white;
 	padding: 8px 8px;
 	border-width: 1px;
-	width: 5%
+	width: 10%
 }
 #content{
 	margin-left: 150px;
