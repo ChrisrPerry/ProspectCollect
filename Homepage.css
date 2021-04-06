@@ -180,7 +180,7 @@ li a:hover{
 	margin-right: 35%;
 	
 }
-td{
+.logtable td{
 	width: 185px;
 }
 #loginbutton{
@@ -209,4 +209,25 @@ h2{
 .member{
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	background-color: #FFFFFF;
+}
+
+.cont h2{
+	padding-top: 10px;
+}
+#addspace{
+	padding-bottom: 10px;
+
+}
+/* profile styling */
+.profiletbl{
+	margin-left:150px;
+
+}
+
+.profiletbl td{
+	width: 1%;
+	text-align: center;
+	padding: 2em;
+	border: 1px solid black;
+	font-size: 22px;
 }
