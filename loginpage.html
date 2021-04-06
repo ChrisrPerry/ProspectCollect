@@ -20,7 +20,7 @@
                 <li><a href="./Homepage.html">Home</a></li>
                 <li><a href="./loginpage.html">Log In</a></li>
                 <li><a href="./profile.html">Profile</a></li>
-                <li><a href="./search-bar.html">Search</a></li>
+                <li><a href="./searchpage.html">Search</a></li>
                 <li style="border-bottom: 1px solid black"><a href="./contactus.html">About Us</a></li>
             </ul>
         </div>
@@ -31,9 +31,8 @@
 
     
       <form name = "logfrm" method = 'POST'>
-        <table class = "logtable" width = "30%" align="center" >
-          
-          <h2>Login</h2>
+        <h2>Login</h2>
+        <table class = "logtable" >
           <tr>
           <td>Username:</td>
           <td><input type ="text" id ="user" name= "user"></td>
@@ -44,15 +43,15 @@
           </tr>
       </table>
       <br><br><br>
-      <input  id = "loginbutton" onclick = "validatelogin(this.form)" type = "button" value = "Submit"/>
+      <input  class = "loginbutton" onclick = "validatelogin(this.form)" type = "button" value = "Submit"/>
     </form>
     
 
     <br><br>
    
       <form name="regfrm" method = 'POST'>
-        <table class = "logtable" width = "30%" align="center" >
-          <h2>Register</h2>
+        <h2>Register</h2>
+        <table class = "logtable">
           <tr>
           <td>Username:</td>
           <td><input type ="text" id ="userr" name= "userr"></td>
@@ -71,10 +70,9 @@
           </tr>
         </table>
         <br><br><br>
-        <input type = "button" id = "loginbutton" onclick = "validateregister(this.form)" value = "submit">
+        <input type = "button" class = "loginbutton" onclick = "validateregister(this.form)" value = "submit">
 
       </form>
     </div>
-  </div>
 </body>
 </html>
