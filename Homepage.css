@@ -178,12 +178,13 @@ li a:hover{
 	position: relative;
 	text-align:center;
 	margin-right: 35%;
+	width:30%;
 	
 }
 .logtable td{
 	width: 185px;
 }
-#loginbutton{
+.loginbutton{
 	float:right;
 	text-align: center;
 	margin-right: 48%;
@@ -201,7 +202,9 @@ h2{
 	padding: 0 8px;
 	text-align: center;
 }
-
+.members h1{
+	padding-top: 30px;
+}
 .cont{
 	padding: 0 16px;
 }
@@ -214,7 +217,7 @@ h2{
 .cont h2{
 	padding-top: 10px;
 }
-#addspace{
+.addspace{
 	padding-bottom: 10px;
 
 }
