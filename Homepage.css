@@ -169,16 +169,28 @@ li a:hover{
 }
 
 /* login page styling */
-div.form{
-    display: block;
-    text-align: center;
+
+
+
+
+.logtable{
+	float:right;
+	position: relative;
+	text-align:center;
+	margin-right: 35%;
+	
+}
+td{
+	width: 185px;
+}
+#loginbutton{
+	float:right;
+	text-align: center;
+	margin-right: 48%;
 }
 
-form{
-    display: inline-block;
-    text-align: center;
-    margin-left: auto;
-
+h2{
+	text-align: center;
 }
 
 /* contact us member bio styling */
