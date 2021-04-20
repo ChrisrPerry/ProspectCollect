@@ -70,7 +70,7 @@ if (digcount == 0 || uppercount == 0 || lowercount == 0){
 	}
 }
 if (haveAlerted == false){
-	alert("User Validated")
+	document.getElementById("loginbutton").type = 'submit'
 }
 
 }
@@ -180,7 +180,11 @@ if (digcount == 0 || uppercount == 0 || lowercount == 0){
 }
 
 if(haveAlerted == false){
-	alert("Registration Validated")
+	document.getElementById("registerbutton").type = 'submit'
+}
 }
 
+function logout(){
+	document.cookie = 'UsersName =; expires= Thu, 01 Jan 1970 00:00:01 GMT; path = /'
+	window.location.replace("./Homepage.php")
 }
