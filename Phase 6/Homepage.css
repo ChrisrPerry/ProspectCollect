@@ -1,0 +1,242 @@
+/* header and nav bar styling */
+#container{
+	width: 100%;
+	margin: 10px auto;
+	background-color: #E6E8E8;
+	color: #333;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	line-height: 130%;
+	overflow: auto;
+	}
+
+#header{
+	padding: 0em 0em;
+	background-color: #4285f4;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+}
+
+#header h1{
+	padding: 12px 0px;
+	font-size: 62px;
+	color: white;
+}
+
+h1{
+	text-align: center;
+}
+#header img{
+	display: block;
+	float:left;
+	max-width: 129px;
+	padding: 0px 10.5px;
+	border-right: 1px solid black;
+}
+
+#navbar {
+	position: absolute;
+	overflow: hidden;
+	background-color: #4285f4;
+	float: left;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 150px;
+}
+
+#navbar ul{
+	list-style-type: none;
+	padding: 0;
+	width: 150px;
+}
+li a{
+	text-decoration: none;
+	display: block;
+	font-size: 24px;
+	text-align: center;
+	padding: 1em 0;
+	color: #FFFFFF;
+	border-top: 1px solid black;
+}
+
+li a:hover{
+	background-color: #9AE9F3;
+	padding: 1em 0;
+	color: #000000;
+}
+#search-bar{
+	height:33.34px;
+	margin-left:150px;
+
+}
+#search-input{
+	float:left;
+	padding: 0.5em 0em;
+	width:89.7%;
+}
+	
+#search-button{
+	float: left;
+	overflow: hidden;
+	background-color: white;
+	padding: 8px 8px;
+	border-width: 1px;
+	width: 10%
+}
+#content{
+	margin-left: 150px;
+	height:185px;
+}
+
+.homeContent{
+	text-align: center;
+
+}
+
+.homeContent p{
+
+	font-size: 20px;
+	font-weight: bold;
+}
+#box{
+	border:1px solid black;
+	left:0px;
+	width:80%;
+	float:left;
+}
+#box h3{
+	text-align: center;
+	font-size: 34px;
+	padding: 40px 0em;
+	margin: 0px auto;
+}
+#box p{
+	text-align: center;
+	font-weight: normal;
+	padding: 40px 0;
+	padding-top:0px;
+	font-size: 20px;
+	margin-left: auto;
+	margin-top:0;
+}
+
+#getStartedButton{
+
+	overflow: hidden;
+	float:right;
+	padding: 81.4px 0px;
+	text-align: center;
+	text-decoration: none;
+	width:19.7%;
+}
+
+#getStartedButton a{
+	border: 1px solid black;
+	background-color: #4285f4;
+	text-decoration: none;
+	color: #FFFFFF;
+	padding: 15px 10%;
+}
+
+#getStartedButton a:hover{
+	text-decoration: none;
+	color: #000000;
+}
+
+.homeImg{
+	display: block;
+	height: 400px;
+
+}
+#images{
+	height:500px;
+	width:100%;
+
+}
+
+#images h3{
+	text-align: center;
+	background-color: 
+}
+
+#footer{
+	padding: 0em 0em;
+	background-color: #4285f4;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#itemData{
+	text-align:center;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+/* login page styling */
+
+
+
+
+.logtable{
+	float:right;
+	position: relative;
+	text-align:center;
+	margin-right: 35%;
+	width:30%;
+	
+}
+.logtable td{
+	width: 185px;
+}
+.loginbutton{
+	float:right;
+	text-align: center;
+	margin-right: 48%;
+}
+
+h2{
+	text-align: center;
+}
+
+/* contact us member bio styling */
+.members{
+	margin: 0px auto;
+	width: 40%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+	text-align: center;
+}
+.members h1{
+	padding-top: 30px;
+}
+.cont{
+	padding: 0 16px;
+}
+
+.member{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background-color: #FFFFFF;
+}
+
+.cont h2{
+	padding-top: 10px;
+}
+.addspace{
+	padding-bottom: 10px;
+
+}
+/* profile styling */
+.profiletbl{
+	margin-left:150px;
+
+}
+
+.profiletbl td{
+	width: 1%;
+	text-align: center;
+	padding: 2em;
+	border: 1px solid black;
+	font-size: 22px;
+}
