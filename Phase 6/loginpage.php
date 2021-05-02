@@ -3,57 +3,6 @@
 error_reporting(E_ALL);
 ini_set("display_errors", "on");
 
-if(isset($_POST["user"]) && isset($_POST["password"]) && $_POST["user"] != "" && $_POST["password"] != ""){
-  $file = fopen("./logins.txt", "r");
-  $check = 0;
-  $newstr = "{$_POST['user']}:{$_POST['password']}";
-  echo $newstr;
-  $length = strlen($newstr);
-  while (!feof($file)){
-
-    $line = trim(fgets($file));
-    $loginUser = substr($line,0,$length);
-    echo $loginUser;
-    if($loginUser == $newstr){
-      $check = 1;
-      break;
-    }
-  }
-
-  fclose($file);
-  if($check == 1){
-    setcookie("UsersName", $_POST["user"], time()+3600*24*30, "/");
-    header("Location: ./profile.php");
-  }
-  else{
-    echo "<script>alert('Wrong username or password')</script>";
-  }
-}
-
-elseif(isset($_POST["userr"]) && isset($_POST["password1"]) && $_POST["userr"] != "" && $_POST["password1"] != "" && isset($_POST["password2"]) && $_POST["password2"] != ""){
-  $file = fopen("./logins.txt", "r");
-  $taken = False;
-  while (!feof($file)){
-    $line = fgets($file);
-    $userlen = strlen($_POST["userr"]);
-    if($_POST["userr"] == substr($line,0,$userlen) && substr($line, $userlen,1) == ':'){
-      echo "<script>alert('Username is already taken')</script>";
-      $taken = True;
-      break;
-    }
-  }
-  fclose($file);
-  
-  if($taken == False){
-    $file = fopen("./logins.txt", "a");
-    fwrite($file, "{$_POST['userr']}:{$_POST['password1']}:{$_POST['email']}\n");
-    fclose($file);
-    setcookie("UsersName", $_POST["userr"], time()+3600*24*30, "/");
-    header("Location: ./profile.php");
-  }
-
-}
-
 if(!isset($_COOKIE['UsersName'])){
 $script = $_SERVER['PHP_SELF'];
 print<<< LOGINPAGE
@@ -87,7 +36,7 @@ print<<< LOGINPAGE
 <input id = "search-button" type = "button" value = "Search"/>
 </div>
 
-<form name = 'logfrm' method = 'POST' action = '$script'>
+<form name = 'logfrm' method = 'POST'>
 <h2>Login</h2>
 <table class = "logtable" >
 <tr>
@@ -106,7 +55,7 @@ print<<< LOGINPAGE
 
 <br><br>
    
-<form name='regfrm' method = 'POST' action = '$script'>
+<form name='regfrm' method = 'POST' action= $script>
 <h2>Register</h2>
 <table class = "logtable">
 <tr>
@@ -134,5 +83,8 @@ print<<< LOGINPAGE
 </body>
 </html>
 LOGINPAGE;
+}
+else{
+	header('Location: ./profile.php');
 }
 ?>
