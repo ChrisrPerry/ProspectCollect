@@ -1,13 +1,17 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set("display_errors", "on");
+
 if(isset($_COOKIE["UsersName"])){
-    loggedSearch();
+loggedSearch();
 }
 else{
-    search();
+search();
 }
 
 function loggedSearch(){
+$script = $_SERVER['PHP_SELF'];
 
 print<<< LOGGEDSEA
 <!DOCTYPE html>
@@ -20,20 +24,6 @@ print<<< LOGGEDSEA
 <script src="validatelogin.js" defer> </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script>
-	function callproxy(){
-		item = document.getElementById("search-input").value;
-		var fetchURL = './proxy.php?https://api.tcgplayer.com/v1.39.0/catalog/products?productName=Sliver Legion';
-	 	$.ajax({
-			method: "GET",
-			url: fetchURL,
-			headers: {Accept: 'application/json', User_Agent: '388706fd', Authorization: 'bearer enoM9gqAONT2sjJowPFv7wlnBw5eXCK_h9hp4MqVe1f0Se9TA0K2OmLKYcChBy_eqgJBjjv_9kjZGAg7ogDhA_d6jyqp8O3kFxczUA6W8ArR7diqQPIDlHBLQV1REkDfpwi4zHKElTZWRLO109_bHZY_oIdDWufStoJIrd1kRZI74K3y4rvOiZJuyAkZF6MIjjsH06MuL8bdbW0JXy3gsQt-rj3HXJXTXIB3ocIRIKQkKF1o9f7eccjtS5tS1sPMB9emh9_4_bESA7TD9zUL1kbSUWFtIPsxH5CGoJvUwXM2sfQOLAHlFzsXMhZi8XZiKOPv8g'}
-             	})
-			.done(function(response) {
-				console.log(response);
-		});
-	}
-</script>
 
 <title>Search Page</title>
 </head>
@@ -54,26 +44,49 @@ print<<< LOGGEDSEA
 </ul>
 </div>
 <div id="search-bar">
-<input id = "search-input" type = "text"/>
-<input id = "search-button" type = "button" onclick = "callproxy()" value = "Search"/>
+<form action=$script method='POST'>
+<input id = "search-input" name = "search-input" type = "text"/>
+<input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
+</form>
 </div>
-<h2 id = "searchItem"></h1>
-<img id = "searchItemImage" src= '' />
-<h3 id = "searchItemHighPrice"></h3>
-<h3 id = "searchItemLowPrice"></h3>
-<h3 id = "searchItemMedianPrice"></h3>
-<a id = "searchItemProductLink></a>
-<button style="display:none;" id = "addtocollection" onclick = "addtoCollection()" value = "Add to collection" />
-
-<img href='./image2.jpg'/>
-<img href = './image3.jpg'/>
-
-</div>
-</body>
-</html>
+<div id = "itemData">
 LOGGEDSEA;
 
 
+if(isset($_POST['search-button'])){
+
+$file = fopen('./searchItem.txt', 'w');
+fwrite($file, $_POST['search-input']);
+fclose($file);
+
+$data = (shell_exec("/usr/bin/python3 ./searchFunction.py"));
+$datalist = explode(" ", $data, 7);
+
+if(trim($datalist[0]) == 'true'){
+
+$high = "High Price: $" . $datalist[3];
+$low = "Low Price: $" . $datalist[4];
+$mid = "Mid Price: $" . $datalist[5];
+echo "<h2 id = 'searchItem'>{$_POST['search-input']}</h1>";
+echo "<img id = 'searchItemImage' src= {$datalist[1]} />";
+if(trim($datalist[2]) == 'true'){
+echo "<h3 id = 'searchItemHighPrice'>{$high}</h3>";
+echo "<h3 id = 'searchItemLowPrice'>{$low}</h3>";
+echo "<h3 id = 'searchItemMedianPrice'>{$mid}</h3>";
+}
+else{
+echo "<h3 id = 'searchItemHighPrice'>No Price Available with TCG API</h3>";
+echo "<h3 id = 'searchItemLowPrice'>No Price Available with TCG API</h3>";
+echo "<h3 id = 'searchItemMedianPrice'>No Price Available with TCG API</h3>";
+}
+echo "<a style='text-align:center;' id = 'searchItemProductLink' href = {$datalist[6]}>Product Link</a><br><br>";
+echo "<button id = 'addtocollection'  onclick = 'addtoCollection()'>Add to collection</button><br><br>";
+}
+else{
+echo "<h2>Please Input Valid Card From TCGplayer.</h2>";
+}
+}
+echo "</div></div></body></html>";	
 
 }
     
