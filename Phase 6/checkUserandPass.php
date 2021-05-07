@@ -46,7 +46,7 @@ else{
 	else{
 		$insert = "INSERT INTO weblogins VALUES ('$username', '$password', '$email')";
 		$mysqli->query($insert);
-		$profiledata = "CREATE TABLE $username (item VARCHAR(30), highPrice VARCHAR(10), lowPrice VARCHAR(10), midPrice VARCHAR(10), productLink VARCHAR(150), imageLink VARCHAR(150))";
+		$profiledata = "CREATE TABLE $username (item VARCHAR(50), highPrice VARCHAR(10), lowPrice VARCHAR(10), midPrice VARCHAR(10), productLink VARCHAR(150), imageLink VARCHAR(150))";
 		$mysqli->query($profiledata);
 		setcookie("UsersName", $username, time()+3600*24*3, "/");
 	}

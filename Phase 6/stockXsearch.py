@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/ python3
 import requests
 from urllib.request import urlopen
 import ssl
 from bs4 import BeautifulSoup
+import selenium
 
 ssl._create_default_https_context = ssl._create_unverified_context
 url = "https://stockx.com/air-jordan-1-retro-high-bio-hack"

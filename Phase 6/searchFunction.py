@@ -18,22 +18,38 @@ if response.text[successind:successind+4] == 'true':
 	endIdInd= response.text.find(',', idInd)
 	imageInd = response.text.find('imageUrl') + 11
 	endImageInd = response.text.find(',', imageInd) - 1
-	productUrlInd = response.text.find('url') + 6
-	endProductUrlInd = response.text.find(',', productUrlInd) - 1
 
-	url2 = "https://api.tcgplayer.com/pricing/marketprices/" + response.text[idInd:endIdInd]
+	prodIdCount = response.text.count('productId')
+	counter = 0
+	done = 0
+	while done == 0 and counter < prodIdCount:
+		url2 = "https://api.tcgplayer.com/pricing/marketprices/" + response.text[idInd:endIdInd]
+		response2 = requests.request("GET", url2, headers=headers)
+		
+		check = response2.text[11:15]
+		
+		if check == 'true':
+			lowInd = response2.text.find('lowestRange') + 13
+			lowEnd = response2.text.find(',', lowInd)
 
-	response2 = requests.request("GET", url2, headers=headers)
-	lowInd = response2.text.find('lowestRange') + 13
-	lowEnd = response2.text.find(',', lowInd)
-
-	midInd = response2.text.find('price') + 7
-	midEnd = response2.text.find(',', midInd)
-
-	highInd = response2.text.find('highestRange') + 14
-	highEnd = response2.text.find('}',highInd)
+			midInd = response2.text.find('price') + 7
+			midEnd = response2.text.find(',', midInd)
 	
-	print(response.text[successind:successind+4] + " " + response.text[imageInd:endImageInd] + " " + response2.text[11:15] + " " + response2.text[highInd:highEnd] + " " + response2.text[lowInd:lowEnd] + " " + response2.text[midInd:midEnd] + " " + response.text[productUrlInd:endProductUrlInd])
+			highInd = response2.text.find('highestRange') + 14
+			highEnd = response2.text.find('}',highInd)
+				
+			productUrlInd = response.text.find('url', idInd) + 6
+			endProductUrlInd = response.text.find(',', productUrlInd) - 1
+			
+			print(response.text[successind:successind+4] + " " + response.text[imageInd:endImageInd] + " " + check + " " + response2.text[highInd:highEnd] + " " + response2.text[lowInd:lowEnd] + " " + response2.text[midInd:midEnd] + " " + response.text[productUrlInd:endProductUrlInd])
+			done = 1
+
+		idInd = response.text.find('productId', endIdInd) + 11
+		endIdInd = response.text.find(',',idInd)
+		counter+=1
+	if done == 0:
+		print(response.text[successind:successind+4] + " " + response.text[imageInd:endImageInd] + " " + check + " None None None None")
+
 
 else:
-	file2.write('Need valid card')
+	print('Need valid card')

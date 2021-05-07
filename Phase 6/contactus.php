@@ -36,8 +36,10 @@ print<<<CONTACT
 </ul>
 </div>
 <div class="search-bar">
-<input id = "search-input" type = "text"/>
-<input id = "search-button" type = "button" value = "Search"/>
+<form action= './searchpage.php' method='POST'>
+<input id = "search-input" name = "search-input" type = "text"/>
+<input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
+</form>
 </div>
 
 <div class="members">
@@ -133,8 +135,10 @@ print<<<LOGGEDCONTACT
 </ul>
 </div>
 <div class="search-bar">
-<input id = "search-input" type = "text"/>
-<input id = "search-button" type = "button" value = "Search"/>
+<form action= './searchpage.php' method='POST'>
+<input id = "search-input" name = "search-input" type = "text"/>
+<input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
+</form>
 </div>
 
 <div class="members">
