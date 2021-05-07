@@ -72,7 +72,16 @@ li a:hover{
 #search-input{
 	float:left;
 	padding: 0.5em 0em;
-	width:89.7%;
+	width:79.7%;
+}
+#selector{
+	float: left;
+	overflow: hidden;
+	background-color: white;
+	padding: 8px 8px;
+	border-width: 1px;
+	width: 10%
+
 }
 	
 #search-button{

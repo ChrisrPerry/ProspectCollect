@@ -41,6 +41,10 @@ print<<< HOMEPAGE
 </div>
 <div id="search-bar">
 <form action= './searchpage.php' method='POST'>
+<select id = "selector" name = "selector">
+	<option value="Cards" id ="card-select" name ="card-select">Cards</option>
+	<option value="Other" id ="Other-select" name ="Other-select">Other Collectables</option>
+</select>
 <input id = "search-input" name = "search-input" type = "text"/>
 <input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
 </form>
@@ -56,14 +60,18 @@ print<<< HOMEPAGE
 </div>
 
 </div>
-<div id= "images">
-<h3>Add your playing cards and your lucrative apparel to your collection!</h3>
-<img style = "float:right" class="homeImg" src="./cards.png" alt="Cards">
-<img style = "float:left" class="homeImg" src="./shoes.png" alt="Shoes">
+
+<h3 style="text-align:center;">Add your playing cards and your lucrative apparel to your collection!</h3>
+<div width = 320 style="margin: 0 auto;">
+<video width = "320" controls style="border:2px solid black; margin: 0 auto;display:block">
+	<source src="IMG_3045.mp4" type= "video/mp4">
+	<source src="IMG_3045.ogg" type= "video/ogg">
+	Your browser does not support the video tag.
+</video>
 </div>
 
 <div id="footer">
-<h3>Omar Daher | Christopher Perry | Michael Sams | Marissa Vera ~ Last Updated: 04/05/2021</h3>
+<h3>Omar Daher | Christopher Perry | Michael Sams | Marissa Vera ~ Last Updated: 05/07/2021</h3>
 </div>
 
 </div>
@@ -108,6 +116,10 @@ print<<< HOMEPAGE
 </div>
 <div id="search-bar">
 <form action= './searchpage.php' method='POST'>
+<select id = "selector" name = "selector">
+	<option value="Cards" id ="card-select" name ="card-select">Cards</option>
+	<option value="Other" id ="Other-select" name ="Other-select">Other Collectables</option>
+</select>
 <input id = "search-input" name = "search-input" type = "text"/>
 <input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
 </form>
@@ -120,7 +132,7 @@ print<<< HOMEPAGE
 </div>
 
 <div id="footer">
-<h3>Omar Daher | Christopher Perry | Michael Sams | Marissa Vera ~ Last Updated: 04/05/2021</h3>
+<h3>Omar Daher | Christopher Perry | Michael Sams | Marissa Vera ~ Last Updated: 05/07/2021</h3>
 </div>
 
 </div>

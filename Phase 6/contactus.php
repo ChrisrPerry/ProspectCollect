@@ -37,6 +37,10 @@ print<<<CONTACT
 </div>
 <div class="search-bar">
 <form action= './searchpage.php' method='POST'>
+<select id = "selector" name = "selector">
+	<option value="Cards" id ="card-select" name ="card-select">Cards</option>
+	<option value="Other" id ="Other-select" name ="Other-select">Other Collectables</option>
+</select>
 <input id = "search-input" name = "search-input" type = "text"/>
 <input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
 </form>
@@ -109,15 +113,17 @@ function loggedContact(){
 
 print<<<LOGGEDCONTACT
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+<title>Propspectors & Collectors</title>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CS 329E Project">
+<meta name="author" content="Omar Daher, Christopher Perry, Michael Sams, Marissa Vera">
 <link href="./Homepage.css" rel= "stylesheet">
-<script src="./validatelogin.js" defer> </script>
-<title>Contact Us!</title>
 </head>
+
 <body>
 <div id="container">
 <div id="header">
@@ -128,14 +134,17 @@ print<<<LOGGEDCONTACT
 <div id="navbar">
 <ul>
 <li><a href="./Homepage.php">Home</a></li>
-<li><a href="./profile.php">Profile</a></li>
+<li><a href="./loginpage.php">Log In</a></li>
 <li><a href="./searchpage.php">Search</a></li>
-<li><a href="javascript:logout()">Logout</a></li>
 <li style="border-bottom: 1px solid black"><a href="./contactus.php">About Us</a></li>
 </ul>
 </div>
-<div class="search-bar">
+<div id="search-bar">
 <form action= './searchpage.php' method='POST'>
+<select id = "selector" name = "selector">
+	<option value="Cards" id ="card-select" name ="card-select">Cards</option>
+	<option value="Other" id ="Other-select" name ="Other-select">Other Collectables</option>
+</select>
 <input id = "search-input" name = "search-input" type = "text"/>
 <input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
 </form>

@@ -44,6 +44,10 @@ print<<< LOGGEDSEAR
 </div>
 <div id="search-bar">
 <form action= './searchpage.php' method='POST'>
+<select id = "selector" name = "selector">
+	<option value="Cards" id ="card-select" name ="card-select">Cards</option>
+	<option value="Other" id ="Other-select" name ="Other-select">Other Collectables</option>
+</select>
 <input id = "search-input" name = "search-input" type = "text"/>
 <input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
 </form>

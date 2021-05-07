@@ -14,13 +14,15 @@
 <body>
 <script language = "javascript" type = "text/javascript">
 	function addtoCollection(data){
-		console.log('df');
 		var ajaxRequest;
 		ajaxRequest = new XMLHttpRequest();
 		
 		ajaxRequest.onreadystatechange = function(){
-			if(ajaxRequest.readyState == 2){
-				console.log('dfs');				
+			if(ajaxRequest.readyState == 4){
+				console.log(ajaxRequest.response);
+				if(ajaxRequest.response != ''){
+					alert(ajaxRequest.response);	
+				}		
 			}
 		}
 		var item = data.searchItem.value;
@@ -31,7 +33,6 @@
 		var prodlink = data.searchItemProductLink.value;
 		data.addtocollection.style.visibility = "hidden";
 		var queryString = "?item=" + item + "&high=" + highPrice + "&low=" + lowPrice + "&mid=" + midPrice + "&image=" + imagelink + "&prod=" + prodlink;
-		
 		ajaxRequest.open("GET", "./addData.php" + queryString, true);
 		ajaxRequest.send(null);
 
@@ -72,8 +73,13 @@ print<<< LOGGEDSEA
 <li><a href= "./validCards.php">Valid Cards</a></li>
 </ul>
 </div>
-<div id="search-bar">
+<div class="search-bar">
 <form action=$script method='POST'>
+<select id = "selector" name = "selector">
+	<option value="Cards" id ="card-select" name ="card-select">Cards</option>
+	<option value="Other" id ="Other-select" name ="Other-select">Other Collectables</option>
+</select>
+
 <input id = "search-input" name = "search-input" type = "text"/>
 <input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
 </form>
@@ -88,6 +94,7 @@ $file = fopen('./searchItem.txt', 'w');
 fwrite($file, $_POST['search-input']);
 fclose($file);
 
+if($_POST['selector'] == 'Cards'){
 $data = (shell_exec("/usr/bin/python3 ./searchFunction.py"));
 
 $datalist = explode(" ", $data, 7);
@@ -110,9 +117,8 @@ echo "<h3>No Price Available with TCG API</h3>";
 echo "<h3>No Price Available with TCG API</h3>";
 }
 echo "<a href = {$datalist[6]}>Product Link</a><br><br>";
-
 echo "<form method='post' action='javascript:void(0);'>";
-echo "<input type = 'hidden' id = 'searchItem' value = {$_POST['search-input']}></input>";
+echo "<input type = 'hidden' id = 'searchItem' value = '{$_POST['search-input']}'></input>";
 echo "<input type = 'hidden' id = 'searchItemImage' value = {$datalist[1]} ></input>";
 echo "<input type = 'hidden' id = 'searchItemHighPrice' value = {$high}></input>";
 echo "<input type = 'hidden' id = 'searchItemLowPrice' value = {$low}></input>";
@@ -127,6 +133,17 @@ echo "<h2>Please Input Valid Card From TCGplayer.</h2>";
 }
 }
 
+else{
+
+
+echo "Need ebay code";
+
+
+
+
+}
+
+}
 echo "</div></div></body></html>";	
 }
     
@@ -152,6 +169,10 @@ print<<< SEARCH
 </div>
 <div id="search-bar">
 <form action=$script method='POST'>
+<select id = "selector" name = "selector">
+	<option value="Cards" id ="card-select" name ="card-select">Cards</option>
+	<option value="Other" id ="Other-select" name ="Other-select">Other Collectables</option>
+</select>
 <input id = "search-input" name = "search-input" type = "text"/>
 <input id = "search-button" name = "search-button" type = "submit" value = "Search"/>
 </form>
